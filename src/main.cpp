@@ -14,6 +14,7 @@ int main() {
 
 	Rational r1 (1,3);
 	Rational r2 (7,8);
+	Rational r3 (7,3);
 
 	Rational addition1 = Rational::add(r1,r2);
 	Rational addition2 = r1+r2;
@@ -28,7 +29,14 @@ int main() {
 	cout << "Addition = " << addition1.toRationalString() << " = " << addition2.toRationalString() << " = " << addition1.toDouble() << endl;
 	cout << "Subtraction = " << subtraction1.toRationalString() << " = " << subtraction2.toRationalString() << " = " << subtraction1.toDouble() << endl;
 	cout << "Multipication = " << multipication1.toRationalString() << " = " << multipication2.toRationalString() << " = " << multipication1.toDouble() << endl;
-	cout << "Division = " << division1.toRationalString() << " = " << division2.toRationalString() << " = " <<  division1.toDouble() << endl;
+	cout << "Division = " << division1.toRationalString() << " = " << division2.toRationalString() << " = " <<  division1.toDouble() << endl << endl;
+
+	cout << r3.toRationalString() << " > " << r1.toRationalString() << " is " << ((r3 > r1) ? "true" : "false") << endl;
+	cout << r3.toRationalString() << " < " << r1.toRationalString() << " is " << ((r3 < r1) ? "true" : "false") << endl;
+	cout << r3.toRationalString() << " >= " << r1.toRationalString() << " is " << ((r3 >= r1) ? "true" : "false") << endl;
+	cout << r3.toRationalString() << " <= " << r1.toRationalString() << " is " << ((r3 <= r1) ? "true" : "false") << endl;
+	cout << r3.toRationalString() << " == " << r1.toRationalString() << " is " << ((r3 == r1) ? "true" : "false") << endl;
+	cout << r3.toRationalString() << " != " << r1.toRationalString() << " is " << ((r3 != r1) ? "true" : "false") << endl;
 
 	return 0;
 }

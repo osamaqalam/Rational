@@ -30,15 +30,23 @@ public:
 	static Rational multiply (Rational r1, Rational r2);
 	static Rational divide (Rational r1, Rational r2);
 
+	// Arithmetic operators implementation
 	Rational operator + (Rational const &obj);
 	Rational operator - (Rational const &obj);
 	Rational operator * (Rational const &obj);
 	Rational operator / (Rational const &obj);
 
+	// Boolean operators implementation
+	bool operator < (Rational const &obj);
+	bool operator > (Rational const &obj);
+	bool operator <= (Rational const &obj);
+	bool operator >= (Rational const &obj);
+	bool operator == (Rational const &obj);
+	bool operator != (Rational const &obj);
 
 	void simplify();
 	string toRationalString();
-	double toDouble();
+	double toDouble() const;
 };
 
 

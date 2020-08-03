@@ -70,6 +70,49 @@ Rational Rational::operator / (Rational const &obj){
 	return result;
 }
 
+bool Rational::operator < (Rational const &obj)
+{
+	if (toDouble() < obj.toDouble())
+		return true;
+	else
+		return false;
+}
+bool Rational::operator > (Rational const &obj)
+{
+	if (toDouble() > obj.toDouble())
+			return true;
+	else
+		return false;
+}
+bool Rational::operator <= (Rational const &obj)
+{
+	if (toDouble() <= obj.toDouble())
+			return true;
+	else
+		return false;
+}
+bool Rational::operator >= (Rational const &obj)
+{
+	if (toDouble() >= obj.toDouble())
+			return true;
+	else
+		return false;
+}
+bool Rational::operator == (Rational const &obj)
+{
+	if (toDouble() == obj.toDouble())
+			return true;
+	else
+		return false;
+}
+bool Rational::operator != (Rational const &obj)
+{
+	if (toDouble() != obj.toDouble())
+		return true;
+	else
+		return false;
+}
+
 void Rational::simplify()
 {
 
@@ -101,7 +144,7 @@ string Rational::toRationalString()
 	return  (num+"/"+den);
 }
 
-double Rational::toDouble()
+double Rational::toDouble() const
 {
 	double result = (double)numerator/denominator;
 	return result;

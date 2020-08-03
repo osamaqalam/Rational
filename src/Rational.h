@@ -30,6 +30,11 @@ public:
 	static Rational multiply (Rational r1, Rational r2);
 	static Rational divide (Rational r1, Rational r2);
 
+	Rational operator + (Rational const &obj);
+	Rational operator - (Rational const &obj);
+	Rational operator * (Rational const &obj);
+	Rational operator / (Rational const &obj);
+
 
 	void simplify();
 	string toRationalString();

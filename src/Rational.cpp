@@ -6,11 +6,16 @@
  */
 
 #include "Rational.h"
+#include <stdexcept>
+
 
 Rational::Rational(int num, int den)
 {
 	numerator = num;
+	if (den <= 0)
+		throw invalid_argument("Denominator must be > 0.0");
 	denominator = den;
+	simplify();
 }
 
  Rational Rational::add (Rational r1, Rational r2)
@@ -37,6 +42,30 @@ Rational Rational::multiply (Rational r1, Rational r2)
 Rational Rational::divide (Rational r1, Rational r2)
 {
 	Rational result( r1.numerator*r2.denominator , r1.denominator*r2.numerator);
+	result.simplify();
+	return result;
+}
+
+Rational Rational::operator + (Rational const &obj){
+	Rational result( (obj.numerator * (this->denominator) ) + (this->numerator * obj.denominator) , obj.denominator * (this->denominator));
+	result.simplify();
+	return result;
+}
+
+Rational Rational::operator - (Rational const &obj){
+	Rational result( this->numerator * obj.denominator - obj.numerator * (this->denominator) , obj.denominator * (this->denominator) );
+	result.simplify();
+	return result;
+}
+
+Rational Rational::operator * (Rational const &obj){
+	Rational result( obj.numerator * (this->numerator) , obj.denominator * (this->denominator) );
+	result.simplify();
+	return result;
+}
+
+Rational Rational::operator / (Rational const &obj){
+	Rational result( this->numerator * (obj.denominator) , this->denominator * (obj.numerator));
 	result.simplify();
 	return result;
 }
